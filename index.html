@@ -403,8 +403,8 @@ const CONTENT = {
     P = 0.99 &nbsp;→ L = −log(0.99) = <span style="color:var(--green)">0.01 &nbsp;← almost perfect</span>`,
   act3P2: `Over a training dataset of billions of tokens, we <em>average</em> this across all positions.
     That average is what training tries to minimize. Every gradient descent step nudges
-    the model's 100B weights in the direction that makes the model slightly less surprised by real text.
-    Do that enough times, and you get GPT.`,
+    the model's 100B weights in the direction that makes the model make slightly fewer next-word errors.
+    Do that enough times, and you get LLM.`,
   act3FormulaHeading: "Cross-entropy loss — the full formula",
   act3FormulaBlock: `L(θ) = − (1/N) · Σᵢ log P_θ(word_{i+1} | word₁…wordᵢ)<br>
     <span class="comment">// average surprise over all N words in the training set</span><br>
