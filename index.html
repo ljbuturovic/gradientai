@@ -378,7 +378,7 @@ const CONTENT = {
   act3Label:   "Act III",
   act3Heading: "What does <em>L(θ)</em> actually measure?",
   act3P1: `So what <em>is</em> the loss function, concretely? For language models, it measures one thing:
-    <strong style="color:var(--chalk)">how surprised is the model by the actual next word?</strong>`,
+    <strong style="color:var(--chalk)">the probability of the next word</strong>`,
 
   // Token demo — change these to any sequence you like
   act3Callout: `The model doesn't output just one number. It outputs a
@@ -386,7 +386,8 @@ const CONTENT = {
     That's a lot of outputs. The loss function ignores 49,999 of them. It only asks one question:
     <em>what probability did the model assign to the correct word?</em>
     That single number — call it P — goes into L&nbsp;=&nbsp;−log(P).
-    Everything else is discarded from the loss calculation.`,
+    Everything else is discarded from the loss calculation. We use log because the probabilities are small; and we use minus because  
+    the gradient descent finds minimum, not maximum`,
   tokenContextLabel:  "INPUT CONTEXT",
   tokenPredictLabel:  "MODEL MUST PREDICT THE NEXT WORD",
   tokenProbLabel:     "P(correct word):",
